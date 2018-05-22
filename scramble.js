@@ -35,7 +35,6 @@ let scramble = function() {
 }
 
 let setText = function() {
-    console.log('a');
     obj.innerHTML = messages[textCounter];
     textCounter = (textCounter +1 ) % messages.length;
    
@@ -48,7 +47,12 @@ let randomString = function () {
     let str = " ";
     let len = messages[textCounter].length;
 
-    len = len < 5 ? 5 : 10;
+    if(len<5){
+        len = 5;
+    }
+    if(len>8){
+        len = 8;
+    }
 
 
     for(i=0; i<len; i++){
